@@ -10,9 +10,42 @@ import UIKit
 
 private let reuseIdentifier = "artIdentifier"
 
-public class ArtCollectionViewController: UICollectionViewController {
-
-    public override func viewDidLoad() {
+public class ArtCollectionViewController: UICollectionViewController
+{
+    private let sectonInserts = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    private let itemsPerRowCompact : CGFloat = 4
+    private let itemsPerRowNormal : CGFloat = 6
+    
+    private let creativeCS : [UIImage?] =
+{
+        return [
+        
+            UIImage(named: "KaydenShepherdOctocat"),
+            UIImage(named: "MainframeHaiku"),
+            UIImage(named: "SwiftHaiku"),
+            UIImage(named: "javaHaiku")
+        ]
+    }()
+    
+    private let labels : [String] =
+    {
+        return [
+        "This",
+        "needs",
+        "to",
+        "be",
+        "one",
+        "to",
+        "one",
+        "with",
+        "creativeCS",
+        "above",
+    ]
+    }()
+        {
+}
+    public override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -24,7 +57,8 @@ public class ArtCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
-   public override func didReceiveMemoryWarning() {
+   public override func didReceiveMemoryWarning()
+   {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
