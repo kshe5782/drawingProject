@@ -23,7 +23,11 @@ public class ArtCollectionViewController: UICollectionViewController
             UIImage(named: "KaydenShepherdOctocat"),
             UIImage(named: "MainframeHaiku"),
             UIImage(named: "SwiftHaiku"),
-            UIImage(named: "javaHaiku")
+            UIImage(named: "javaHaiku"),
+            UIImage(named: "Simpson1"),
+            UIImage(named: "Simpson2"),
+            UIImage(named: "Simpson3"),
+            UIImage(named: "Simpsons4")
         ]
     }()
     
@@ -39,7 +43,7 @@ public class ArtCollectionViewController: UICollectionViewController
         "one",
         "with",
         "creativeCS",
-        "above",
+        "above"
     ]
     }()
         {
@@ -95,7 +99,18 @@ public class ArtCollectionViewController: UICollectionViewController
     }
 
     // MARK: UICollectionViewDelegate
-
+    
+    
+    public func collectionView(_collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        let paddingSpace = sectionInsets.left * (itemsPerRowCompact + 1)
+        let AvailableWidth = view.frame.width - paddingSpace
+        let widthPerItem = AvailableWidth / itemsPerRowCompact
+        
+        return CGSize(width: widthPerItem, Height)
+    }
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
